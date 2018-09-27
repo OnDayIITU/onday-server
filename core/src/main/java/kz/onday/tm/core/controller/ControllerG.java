@@ -21,26 +21,45 @@ import java.util.List;
 public class ControllerG {
     @Autowired
     public IService service;
+
     @GetMapping("/event")
     public List<Event> getAllEvents(){
         return  service.getAllEvent();
     }
+    @GetMapping("/event/{id}")
+    Event getEventById(@PathVariable(value = "id") Integer id){ return service.getEventById(id);}
+
     @GetMapping("/eventusermap")
-    public List<EventUserMap> getAllEventUserMaps(){
-        return  service.getAllEventUserMap();
-    }
+    public List<EventUserMap> getAllEventUserMaps(){ return  service.getAllEventUserMap(); }
+    @GetMapping("/eventusermap/{id}")
+    EventUserMap getEventUserMapById(@PathVariable(value = "id") Integer id){ return service.getEventUserMapById(id);}
+
     @GetMapping("/group")
     public List<Group> getAllGroups(){ return  service.getAllGroup(); }
+    @GetMapping("/group/{id}")
+    Group getGroupById(@PathVariable(value = "id") Integer id){ return service.getGroupById(id);}
+
     @GetMapping("/groupusermap")
     public List<GroupUserMap> getAllGroupUserMaps(){
         return  service.getAllGroupUserMap();
     }
+    @GetMapping("/groupusermap/{id}")
+    GroupUserMap getGroupUserMapById(@PathVariable(value = "id") Integer id){ return service.getGroupUserMapById(id);}
+
     @GetMapping("/level")
     public List<Level> getAllLevels(){
         return  service.getAllLevel();
     }
+    @GetMapping("/level/{id}")
+    Level getLevelById(@PathVariable(value = "id") Integer id){ return service.getLevelById(id);}
+
     @GetMapping("/status")
     public List<Status> getAllStatuses(){ return  service.getAllStatus(); }
+    @GetMapping("/status/{id}")
+    Status  getStatusById(@PathVariable(value = "id") Integer id){ return service.getStatusById(id);}
+
     @GetMapping("/user")
     public List<User> getAllUsers(){ return  service.getAllUser(); }
+    @GetMapping("/user/{id}")
+    User getUserById(@PathVariable(value = "id") Integer id){ return service.getUserById(id);}
 }

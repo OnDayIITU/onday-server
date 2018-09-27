@@ -33,16 +33,35 @@ public class ServiceG implements IService {
     @Override
     public List<Event> getAllEvent() { return eventJpaRepo.findAll(); }
     @Override
+    public Event getEventById(Integer id){ return eventJpaRepo.findOne(id);}
+
+    @Override
     public List<EventUserMap> getAllEventUserMap() { return eventUserMapJpaRepo.findAll(); }
+    @Override
+    public EventUserMap getEventUserMapById(Integer id){ return eventUserMapJpaRepo.findOne(id);}
+
     @Override
     public List<Group> getAllGroup() { return groupJpaRepo.findAll(); }
     @Override
+    public Group getGroupById(Integer id){ return groupJpaRepo.findOne(id);}
+
+    @Override
     public List<GroupUserMap> getAllGroupUserMap() { return groupUserMapJpaRepo.findAll(); }
+    @Override
+    public GroupUserMap getGroupUserMapById(Integer id){ return groupUserMapJpaRepo.findOne(id);}
+
     @Override
     public List<Level> getAllLevel() { return levelJpaRepo.findAll(); }
     @Override
+    public Level getLevelById(Integer id){ return levelJpaRepo.findOne(id);}
+
+    @Override
     public List<Status> getAllStatus() { return statusJpaRepo.findAll(); }
     @Override
-    public List<User> getAllUser() { return userJpaRepo.findAll(); }
+    public Status getStatusById(Integer id){ return statusJpaRepo.findOne(id);}
 
+    @Override
+    public List<User> getAllUser() { return userJpaRepo.findAll(); }
+    @Override
+    public User getUserById(Integer id){ return userJpaRepo.findOne(id);}
 }
