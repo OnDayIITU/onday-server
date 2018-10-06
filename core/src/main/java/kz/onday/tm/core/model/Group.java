@@ -8,7 +8,6 @@ public class Group {
     private int id;
     private String name;
     private String description;
-    private Integer levelId;
     private Integer creatorId;
 
     @Id
@@ -43,16 +42,6 @@ public class Group {
     }
 
     @Basic
-    @Column(name = "level_id")
-    public Integer getLevelId() {
-        return levelId;
-    }
-
-    public void setLevelId(Integer levelId) {
-        this.levelId = levelId;
-    }
-
-    @Basic
     @Column(name = "creator_id")
     public Integer getCreatorId() {
         return creatorId;
@@ -70,12 +59,11 @@ public class Group {
         return id == group.id &&
                 Objects.equals(name, group.name) &&
                 Objects.equals(description, group.description) &&
-                Objects.equals(levelId, group.levelId) &&
                 Objects.equals(creatorId, group.creatorId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, levelId, creatorId);
+        return Objects.hash(id, name, description, creatorId);
     }
 }

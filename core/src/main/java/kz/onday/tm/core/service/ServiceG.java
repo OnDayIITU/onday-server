@@ -4,7 +4,6 @@ import kz.onday.tm.core.model.Event;
 import kz.onday.tm.core.model.EventUserMap;
 import kz.onday.tm.core.model.Group;
 import kz.onday.tm.core.model.GroupUserMap;
-import kz.onday.tm.core.model.Level;
 import kz.onday.tm.core.model.Status;
 import kz.onday.tm.core.model.User;
 import kz.onday.tm.core.repository.*;
@@ -23,8 +22,6 @@ public class ServiceG implements IService {
     GroupJpaRepo groupJpaRepo;
     @Autowired
     GroupUserMapJpaRepo groupUserMapJpaRepo;
-    @Autowired
-    LevelJpaRepo levelJpaRepo;
     @Autowired
     StatusJpaRepo statusJpaRepo;
     @Autowired
@@ -49,11 +46,6 @@ public class ServiceG implements IService {
     public List<GroupUserMap> getAllGroupUserMap() { return groupUserMapJpaRepo.findAll(); }
     @Override
     public GroupUserMap getGroupUserMapById(Integer id){ return groupUserMapJpaRepo.findOne(id);}
-
-    @Override
-    public List<Level> getAllLevel() { return levelJpaRepo.findAll(); }
-    @Override
-    public Level getLevelById(Integer id){ return levelJpaRepo.findOne(id);}
 
     @Override
     public List<Status> getAllStatus() { return statusJpaRepo.findAll(); }

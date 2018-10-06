@@ -4,7 +4,6 @@ import kz.onday.tm.core.model.Event;
 import kz.onday.tm.core.model.EventUserMap;
 import kz.onday.tm.core.model.Group;
 import kz.onday.tm.core.model.GroupUserMap;
-import kz.onday.tm.core.model.Level;
 import kz.onday.tm.core.model.Status;
 import kz.onday.tm.core.model.User;
 import kz.onday.tm.core.service.IService;
@@ -45,13 +44,6 @@ public class ControllerG {
     }
     @GetMapping("/groupusermap/{id}")
     GroupUserMap getGroupUserMapById(@PathVariable(value = "id") Integer id){ return service.getGroupUserMapById(id);}
-
-    @GetMapping("/level")
-    public List<Level> getAllLevels(){
-        return  service.getAllLevel();
-    }
-    @GetMapping("/level/{id}")
-    Level getLevelById(@PathVariable(value = "id") Integer id){ return service.getLevelById(id);}
 
     @GetMapping("/status")
     public List<Status> getAllStatuses(){ return  service.getAllStatus(); }

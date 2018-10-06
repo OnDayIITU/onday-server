@@ -10,6 +10,7 @@ public class EventUserMap {
     private Integer eventId;
     private Integer userId;
     private Integer statusId;
+    private Integer groupId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +53,16 @@ public class EventUserMap {
         this.statusId = statusId;
     }
 
+    @Basic
+    @Column(name = "group_id")
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,11 +71,12 @@ public class EventUserMap {
         return id == that.id &&
                 Objects.equals(eventId, that.eventId) &&
                 Objects.equals(userId, that.userId) &&
-                Objects.equals(statusId, that.statusId);
+                Objects.equals(statusId, that.statusId) &&
+                Objects.equals(groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, eventId, userId, statusId);
+        return Objects.hash(id, eventId, userId, statusId, groupId);
     }
 }
